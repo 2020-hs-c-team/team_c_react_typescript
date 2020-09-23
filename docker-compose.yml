@@ -1,0 +1,13 @@
+version: '3'
+services:
+  node:
+    build:
+      context: .
+    tty: true
+    environment:
+      - NODE_ENV=production
+    volumes:
+    - ./:/usr/src/app
+    command: sh -c "cd sample_app && yarn start"
+    ports:
+    - "3000:3000"
