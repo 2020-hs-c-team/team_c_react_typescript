@@ -1,1 +1,42 @@
-# team_c_react_typescript
+<a href="" title="FVCproductions" alt="FVCproductions"></a>
+
+***INSERT GRAPHIC HERE (include hyperlink in image)***
+
+# Heartsoft's 2020 c-team Hackason
+
+**Badges will go here**
+
+- build status
+- devDependencies
+- npm package
+- slack
+
+[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![Dependency Status](http://img.shields.io/gemnasium/badges/badgerbadgerbadger.svg?style=flat-square)](https://gemnasium.com/badges/badgerbadgerbadger) [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger) [![Code Climate](http://img.shields.io/codeclimate/github/badges/badgerbadgerbadger.svg?style=flat-square)](https://codeclimate.com/github/badges/badgerbadgerbadger) [![Github Issues](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/issues.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/issues) [![Pending Pull-Requests](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/pulls.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/pulls) [![Gem Version](http://img.shields.io/gem/v/badgerbadgerbadger.svg?style=flat-square)](https://rubygems.org/gems/badgerbadgerbadger) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+
+
+## Installation
+
+- All the `code` required to get started
+
+### Clone
+
+- Clone this repo to your local machine using `https://github.com/2020-hs-c-team/team_c_react_typescript.git`
+
+### Setup
+
+- If you want more syntax highlighting, format your code like this:
+
+> update and install this package first
+
+```shell
+$ brew install npm
+$ cd sample_app
+$ npm install
+```
+
+> run server on 127.0.0.1:3000
+
+```shell
+$ cd sample_app
+$ npm start
+```
