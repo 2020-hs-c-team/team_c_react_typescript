@@ -34,11 +34,7 @@ $ cd sample_app
 $ npm start
 ```
 
-### How to Develope on VS Code
-
-> インストールコマンドをsample_appフォルダで実行
-
-```npm install```
+### How to Develop on VS Code
 
 > sample_appフォルダをVS codeにインポート
 
