@@ -33,3 +33,17 @@ $ npm install
 $ cd sample_app
 $ npm start
 ```
+
+## Docker Build & Run
+
+### Build & Run
+
+```shell
+$ docker-compose up -d --build
+```
+
+### Stop & Remove
+
+```shell
+$ docker-compose down
+```
