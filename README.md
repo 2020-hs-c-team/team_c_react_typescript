@@ -45,3 +45,17 @@ https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome
 > デバッグ画面からChromeを選択しデバッグ実行
 
 ![デバッグ画面](https://user-images.githubusercontent.com/43020978/94392948-c3669680-0194-11eb-9c91-bdd347e85b19.jpg "サンプル")
+
+## Docker Build & Run
+
+### Build & Run
+
+```shell
+$ docker-compose up -d --build
+```
+
+### Stop & Remove
+
+```shell
+$ docker-compose down
+```
