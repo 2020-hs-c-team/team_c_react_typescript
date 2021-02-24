@@ -1,0 +1,112 @@
+@startuml
+title お知らせ機能シーケンス図
+autonumber "[00]"
+actor ユーザ as user
+participant "Robby" as robby
+participant "CreateRoom" as newRoom
+participant "QuizPage" as quiz #FF99CC
+participant "UserListView" as users #FF99CC
+participant "AudienceGraph" as audience #FF99CC
+participant "ChatList" as chat #FF99CC
+participant "SettingView" as setting #FF99CC
+participant "QuestionView" as question #FF99CC
+participant "AnswerView" as answer #FF99CC
+participant "RealtimeDB" as db #c1e4e9
+actor "主催者" as fac
+
+== ルームの作成 ==
+user -> user : ローカルからUUID取得
+alt UUIDがない場合
+    robby -> user : UUID作成
+    user -> robby : 名前入力
+    robby -> db : UUIDと初期値(名無し)を保存
+else
+end
+robby -> user : UUIDをローカルに保存
+user <-> db : userListとUUIDを同期
+note right of user
+このUUIDとユーザー名の管理の仕組みは天鳳という麻雀ゲームのような・・・
+UUIDを覚えていたら、ログイン自由
+※Google連携でログインなどでもいいかも。ただそうなるとログインを作り込む作り込む必要がある
+end note
+
+group 案1
+user -> robby : ルーム作成ボタン押下
+robby -> newRoom : 遷移
+user -> newRoom : ルーム作成
+newRoom -> quiz : クイズ画面遷移
+quiz -> db : ゲーム情報同期(key:game_room_{room_uuid})
+quiz -> quiz : 赤枠(〜View)初期化
+note right of quiz
+ここから作成したユーザーを主催者とする
+end note
+end group
+
+group 案2
+quiz -> db : ゲーム情報同期(key:game_room_{room_uuid})
+quiz -> quiz : 赤枠(〜View)初期化
+alt uuidがAdmin情報に保存されたものに含まれる
+quiz --> user : SettingViewを表示
+else
+end
+end group
+
+== ゲームの開始 ==
+group 主催者のクライアントで実施
+fac -> setting : 開始ボタン押下
+setting -> setting : 出題者をランダムで選出
+setting -> db : 出題者情報を更新
+quiz -> db : ユーザーのdbへの書き込み権限フラグをフラグをオンにする
+end group
+
+== クイズの開始 ==
+group ユーザーのクライアントで実施
+answer <-> db : クイズ情報更新
+user -> question : 質問内容を決め開始ボタン押下
+question -> db : 出題内容を更新
+question -> question : 回答者を選出
+question -> db : 回答者を更新
+end group
+
+== クイズ中の操作 ==
+group ユーザーのクライアントで実施
+quiz <-> db : クイズ情報更新
+quiz -> answer : 画面初期化
+quiz -> users : 回答者の表示を更新
+user -> answer : 回答を選択
+answer <-> db : 回答を更新
+alt 現在時刻が回答時間の半分より後だったら(ここは繰り返し)
+audience -> audience : 非表示
+else
+audience -> audience : 表示
+end
+end group
+
+== 回答時間経過後の操作 ==
+quiz <-> db : クイズ情報更新
+
+group 主催者のクライアントで実施
+alt 終了時間が経過したら
+quiz -> db : ユーザーのdbへの書き込み権限フラグをフラグをオフにする
+quiz -> db : 回答結果を集計
+quiz -> db : 回答結果を保存
+alt 回答者の答えが集計結果と一致したら
+quiz -> db : 勝者情報を更新
+end
+end group
+
+group ユーザーのクライアントで実施
+alt 現在時刻が回答時間より後だったら(ここは繰り返し)
+audience -> audience : 表示
+answer -> answer : 非表示
+quiz -> quiz : 勝者情報を表示
+else
+end
+end group
+
+== チャット画面 ==
+user -> chat : チャットを送信
+chat <-> : チャット情報を更新
+chat -> chat : チャット画面更新
+
+@enduml
