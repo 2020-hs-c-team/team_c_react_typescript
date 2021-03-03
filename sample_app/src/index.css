@@ -1,13 +1,68 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.b__message-main {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+@media screen and (max-width:520px) { 
+  /*　画面サイズが520pxからはここを読み込む　*/
+  .b__message-main {
+    margin: 0 20px;
+  }
+}
+
+.b__message-main .textArea {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.b__message-main .textArea form {
+  width: 80%;
+  
+}
+
+.b__message-main .textArea form .text {
+  width: 95%;
+  margin: 0;
+}
+
+.b__message-main .textArea button {
+  width: 20%;
+  margin: 0;
+}
+
+.b__message-main .textArea form {
+  width: 80%;
+}
+
+.b__message-main ul {
+  margin: 10px auto;
+}
+
+.b__message-main ul li {
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.b__message-main ul .MuiDivider-inset{
+  margin-left: 57px;
+}
+
+.b__message-main ul li .MuiListItemAvatar-alignItemsFlexStart {
+  margin-top: 0;
 }

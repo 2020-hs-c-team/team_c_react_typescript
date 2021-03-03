@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import {Provider} from 'react-redux';
+import {TopMainPage} from './pages';
 import * as serviceWorker from './serviceWorker';
+import {configureStore} from './redux';
+
+import './index.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={configureStore()}>
+    <TopMainPage />
+  </Provider>,
   document.getElementById('root')
 );
 
