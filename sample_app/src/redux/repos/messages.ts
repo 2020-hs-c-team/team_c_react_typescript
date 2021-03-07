@@ -1,7 +1,7 @@
 import produce from 'immer';
 
-export const addMessage = (state, payload) => {
-  const newState = produce(state, draftState => {
+export const addMessage = (state: any, payload: any) => {
+  const newState = produce(state, (draftState: any) => {
     draftState.value = '';
     draftState.text = payload;
   });
@@ -9,8 +9,8 @@ export const addMessage = (state, payload) => {
   return newState;
 };
 
-export const changeText = (state, payload) => {
-  const newState = produce(state, draftState => {
+export const changeText = (state: any, payload: any) => {
+  const newState = produce(state, (draftState: any) => {
     draftState.value = payload;
   });
 
