@@ -8,7 +8,7 @@ const classes = {
   },
 };
 
-class TemplateView extends Component {
+class Template extends Component {
   componentDidMount() {
     //初期化処理
   }
@@ -32,4 +32,4 @@ class TemplateView extends Component {
     );
   }
 }
-export default withStyles(classes)(TemplateView);
+export default withStyles(classes)(Template);
