@@ -8,7 +8,7 @@ const classes = {
   },
 };
 
-class QuizView extends Component {
+class TemplateView extends Component {
   componentDidMount() {
     //初期化処理
   }
@@ -32,4 +32,4 @@ class QuizView extends Component {
     );
   }
 }
-export default withStyles(classes)(QuizView);
+export default withStyles(classes)(TemplateView);
