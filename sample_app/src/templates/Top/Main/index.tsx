@@ -32,6 +32,7 @@ class Main extends Component<{}, State> {
           </Grid>
           <Grid item xs={4}>
             <Top.QuizView />
+            <Top.Template />
           </Grid>
         </Grid>
         {/* {(this.props as any).messages.msgs.map((m: any, i: any) => (<Top.AlignItemsList key={i} msgs={m} />))} */}
