@@ -1,0 +1,27 @@
+.root{
+    text-align: center;
+}
+
+.title{
+    text-align: left;
+}
+
+.question{
+    text-align: center;
+    margin: 15;
+    width: 80%;
+}
+
+.desc{
+    text-align: center;
+    margin: 15;
+    width: 60%;
+}
+
+.button{
+    text-align: right;
+}
+
+.MuiDialog-paperWidthSm{
+    min-width: 800px;
+}
