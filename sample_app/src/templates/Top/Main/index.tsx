@@ -33,6 +33,9 @@ class Main extends Component<{}, State> {
           <Grid item xs={4}>
             <Top.Template />
           </Grid>
+          <Grid item xs={4}>
+            <Top.Management />
+          </Grid>
         </Grid>
         {/* {(this.props as any).messages.msgs.map((m: any, i: any) => (<Top.AlignItemsList key={i} msgs={m} />))} */}
         {/* <Top.SendButton onClick={(this.props as any).actions.messages.submit} value={(this.props as any).messages.value} image={(this.props as any).messages.image} /> */}
