@@ -4,26 +4,35 @@ import { Top } from '../../../components/core';
 import { firebaseDb } from '../../../firebase';
 const messagesRef = firebaseDb.ref('messages');
 type State = any;
+
 class Main extends Component<{}, State> {
+  public players: any[] = new Array();
+  constructor(props: any) {
+    super(props);
+  }
+
   componentWillMount() {
     messagesRef.on('child_added', snapshot => {
       const m = snapshot.val();
-      // let msgs = (this.props as any).messages.msgs;
-      // msgs.push({
-      //   image: m.image,
-      //   text: m.text,
-      // });
-      // this.setState({
-      //   msgs: msgs,
-      // });
+      this.players.push({
+        image: m.image
+        , text: m.text
+      });
+      this.setState({ // ここを削除すると機能しないので残す
+          // message:  m
+      });
     });
   }
   render() {
-    console.log((this.props as any).messages);
     return (<div className="a__top-main">
       <Top.ButtonAppBar />
       <div className="b__top-main">
         <Grid container spacing={3} alignItems="center" justify="center">
+          <Grid item xs={4}>
+            {this.players.map((player) => ( 
+              <Top.PlayersList image={player['image']} text={player['text']} />
+            ))}
+          </Grid>
           <Grid item xs={4}>
             <Top.TextInput
             // onChange={(this.props as any).actions.messages.change}
