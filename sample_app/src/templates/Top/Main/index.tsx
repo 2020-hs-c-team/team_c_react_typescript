@@ -40,6 +40,7 @@ class Main extends Component<{}, State> {
             />
           </Grid>
           <Grid item xs={4}>
+            <Top.QuizView />
             <Top.Template />
           </Grid>
           <Grid item xs={4}>
