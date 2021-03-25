@@ -44,7 +44,6 @@ function PlayersList(props: any) {
     </CardContent>
     </Card>
   </React.Fragment>
-
   );
 }
 

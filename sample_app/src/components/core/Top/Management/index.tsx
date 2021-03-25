@@ -25,7 +25,6 @@ function Management() {
   const classes = useStyles();
 
     return (
-      
       <React.Fragment>
         <Card>
           <CardHeader>

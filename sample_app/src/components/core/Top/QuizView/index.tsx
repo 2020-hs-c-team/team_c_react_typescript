@@ -70,7 +70,7 @@ class QuizView extends Component {
             </Typography>
             <Divider component="div" />
             <ProgressBar />
-            <div id="chartdiv" style={{ width: "100%", height: "500px"}}></div>
+            <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div>
             <Typography variant="body2" component="p">
             </Typography>
             <Divider component="p" />
