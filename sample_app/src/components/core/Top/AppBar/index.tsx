@@ -25,7 +25,7 @@ function ButtonAppBar() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h4" className={classes.title}>
-            PigTalk
+            Quiz Realtime
           </Typography>
         </Toolbar>
       </AppBar>

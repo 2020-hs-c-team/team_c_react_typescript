@@ -1,7 +1,14 @@
 import React from 'react';
-import { Card, CardActions, CardContent, CardHeader, withStyles } from '@material-ui/core';
-import { Button, Divider, FormControl, FormControlLabel, FormLabel, Grid, makeStyles, Radio, RadioGroup, Typography} from '@material-ui/core';
+import {makeStyles} from '@material-ui/core/styles';
+import { Card, CardActions, CardContent, CardHeader } from '@material-ui/core';
+import { Button, Typography} from '@material-ui/core';
 import '../../../../styles/TextInput.css';
+
+const useStyles = makeStyles(theme => ({
+  btn: {
+    marginBottom: "10px"
+  },
+}));
 
 function Management() {
 
@@ -15,43 +22,48 @@ function Management() {
     setOpen(false);
   };
 
+  const classes = useStyles();
 
     return (
       <React.Fragment>
-        <Card　className="root">
+        <Card>
           <CardHeader>
           </CardHeader>
-
           <CardContent>
             <Typography
               // className={classes.title}
               color="textSecondary"
-              gutterBottom
-              variant="h4">
+              variant="h4"
+              align="left"
+              gutterBottom>
               管理画面
             </Typography>
             <Typography
               // className={classes.title}
               color="textSecondary"
-              variant="h5">
+              variant="h6"
+              gutterBottom>
               管理者:
             </Typography>
+            <Button
+              // onClick={() => props.onClick(props.value, props.image)}
+              variant="contained"
+              color="primary"
+              className={classes.btn}
+            >
+              結果を表示
+            </Button>
+            <div>
               <Button
                 // onClick={() => props.onClick(props.value, props.image)}
                 variant="contained"
                 color="primary"
+                className={classes.btn}
               >
-                結果を表示
+                次のクイズへ
               </Button>
-              <Button
-                // onClick={() => props.onClick(props.value, props.image)}
-                variant="contained"
-                color="primary"
-                >
-                  次のクイズへ
-              </Button>
-          </CardContent>
-          
+            </div>
+          </CardContent>          
           <CardActions>
           </CardActions>
         </Card>

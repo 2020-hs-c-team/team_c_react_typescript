@@ -29,6 +29,7 @@ class QuizView extends Component {
     let series = chart.series.push(new am4charts.PieSeries());
     series.dataFields.value = "litres";
     series.dataFields.category = "country";
+    series.labels.template.disabled = true;
     chart.data = [{
       "country": "お好み焼き",
       "litres": 35
