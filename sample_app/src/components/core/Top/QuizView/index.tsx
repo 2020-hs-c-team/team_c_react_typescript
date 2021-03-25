@@ -29,6 +29,7 @@ class QuizView extends Component {
     let series = chart.series.push(new am4charts.PieSeries());
     series.dataFields.value = "litres";
     series.dataFields.category = "country";
+    series.labels.template.disabled = true;
     chart.data = [{
       "country": "お好み焼き",
       "litres": 35
@@ -69,7 +70,7 @@ class QuizView extends Component {
             </Typography>
             <Divider component="div" />
             <ProgressBar />
-            <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div>
+            <div id="chartdiv" style={{ width: "100%", height: "500px"}}></div>
             <Typography variant="body2" component="p">
             </Typography>
             <Divider component="p" />

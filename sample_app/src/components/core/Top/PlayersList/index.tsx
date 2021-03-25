@@ -6,6 +6,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Star } from '@material-ui/icons'
 import { Favorite } from '@material-ui/icons'
+import { Card, CardContent } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -18,7 +19,7 @@ const useStyles = makeStyles(theme => ({
 
 function RenderIcon(props: any) {
   console.log("auth:" + props.auth)
-  if(props.auth == 'test') { // TODO：プレイヤーの回答権を判定
+  if(props.auth == 'fukunaga') { // TODO：プレイヤーの回答権を判定
     return <Star color="secondary" />;
   } else {
     return <Favorite />;
@@ -26,19 +27,24 @@ function RenderIcon(props: any) {
 }
 
 function PlayersList(props: any) {
-  console.log(props.image);
-  console.log(props.text);
   const classes = useStyles();
   return (
-    <List className={classes.root}>
-      <ListItem alignItems="flex-start">
-        <ListItemText primary={props.text} />
-        <RenderIcon
-          auth={props.text} // TODO：プレイヤーの回答有無を取得
-        />
-      </ListItem>
+    <React.Fragment>
+    <Card>
+      <CardContent>
+      <List className={classes.root}>
+        <ListItem alignItems="flex-start">
+          <ListItemText primary={props.text} />
+          <RenderIcon
+            auth={props.text} // TODO：プレイヤーの回答有無を取得
+          />
+        </ListItem>
       <Divider component="li" />
-    </List>
+      </List>
+    </CardContent>
+    </Card>
+  </React.Fragment>
+
   );
 }
 
