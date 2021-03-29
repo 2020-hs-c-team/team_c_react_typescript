@@ -7,3 +7,4 @@ export { default as Template } from './Template';
 export { default as QuizDescription } from './QuizDescription';
 export { default as Management } from './Management';
 export { default as PlayersList } from './PlayersList';
+export { default as AddPlayerBtn} from './AddPlayerBtn'

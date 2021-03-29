@@ -29,6 +29,7 @@ class Main extends Component<{}, State> {
       <div className="b__top-main">
         <Grid container spacing={3} alignItems="stretch" justify="center">
           <Grid item xs={4}>
+              <Top.AddPlayerBtn />
             {this.players.map((player) => ( 
               <Top.PlayersList image={player['image']} text={player['text']} />
             ))}
