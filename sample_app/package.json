@@ -54,8 +54,8 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "react": "^16.13.1",
-    "ts-migrate": "^0.1.15"
-  }
+    "devDependencies": {
+      "react": "^16.13.1",
+      "ts-migrate": "^0.1.15"
+    } 
 }
