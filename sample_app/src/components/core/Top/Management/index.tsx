@@ -3,10 +3,8 @@ import {makeStyles} from '@material-ui/core/styles';
 import { Card, CardActions, CardContent, CardHeader, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField} from '@material-ui/core';
 import { Button, Typography} from '@material-ui/core';
 import '../../../../styles/TextInput.css';
-import Modal from "react-modal";
 import '../../../../styles/QuizDesc.css';
 
-Modal.setAppElement("#root");
 
 
 const useStyles = makeStyles(theme => ({
